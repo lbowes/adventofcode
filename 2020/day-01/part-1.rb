@@ -1,14 +1,10 @@
 #!/usr/bin/ruby
 
-lines = File.readlines('input.txt').map(&:to_i).sort
+values = File.readlines('input.txt').map(&:to_i).sort
 
-for x in lines
-    for y in lines
-        if x + y == 2020
-            product = x * y
-            break
-        end
+for pair in values.combination(2)
+    if pair.sum == 2020
+        puts pair.inject(:*)
+        break
     end
 end
-
-puts product

@@ -1,16 +1,10 @@
 #!/usr/bin/ruby
 
-lines = File.readlines('input.txt').map(&:to_i).sort
+values = File.readlines('input.txt').map(&:to_i).sort
 
-for x in lines
-    for y in lines
-        for z in lines
-            if x + y + z == 2020
-                product = x * y * z
-                break
-            end
-        end
+for triplet in values.combination(3)
+    if triplet.sum == 2020
+      puts triplet.inject(:*)
+      break
     end
 end
-
-puts product
