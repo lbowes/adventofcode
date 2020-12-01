@@ -1,8 +1,6 @@
 #!/usr/bin/ruby
 
-require 'set'
-
-lines = File.readlines('input.txt').map(&:to_i)
+lines = File.readlines('input.txt').map(&:to_i).sort
 
 for x in lines
     for y in lines
