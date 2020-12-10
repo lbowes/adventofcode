@@ -1,14 +1,11 @@
 require "matrix"
 
-
 $terrain = DATA.readlines.map{|line| line.delete! "\n"}
-
 
 def char_at(pos_2d)
     # top left is (0, 0)
     $terrain[pos_2d[1]][pos_2d[0] % $terrain[0].length]
 end
-
 
 def trees_along(slope)
     pos = Vector[0, 0]
@@ -22,10 +19,8 @@ def trees_along(slope)
     tree_count
 end
 
-
 # part 1
 puts trees_along(Vector[3, 1])
-
 
 # part 2
 puts [
@@ -35,7 +30,6 @@ puts [
     [7, 1],
     [1, 2]
 ].map{|s| trees_along(Vector[*s])}.inject(&:*)
-
 
 __END__
 ....#..#.......#........#....#.
